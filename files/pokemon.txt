@@ -1,0 +1,14 @@
+bulbasaur,grass
+ivysaur,grass
+venusaur,grass
+charmander,fire
+charmeleon,fire
+charizard,fire
+squirtle,water
+wartortle,water
+blastoise,water
+caterpie,bug
+metapod,bug
+butterfree,bug
+pikachu,electric
+raichu,electric
