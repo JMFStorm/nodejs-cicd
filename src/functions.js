@@ -1,7 +1,12 @@
-function GetRandomNumber(limit) {
+function GetCurrentDay() {
   const now = new Date();
-  const dateNum = now.getDate();
-  return Math.floor((dateNum * 666) % (limit ?? 0));
+  return now.getDate();
 }
 
-module.exports = { GetRandomNumber };
+function GetRandomNumberOfTheDay(limit) {
+  const useLimit = limit ?? 1000;
+  const dateNum = GetCurrentDay();
+  return Math.floor((dateNum * 666) % useLimit);
+}
+
+module.exports = { GetRandomNumberOfTheDay, GetCurrentDay };

@@ -1,5 +1,4 @@
 const express = require("express");
-var path = require("path");
 const { GetDailyPokemonV1, GetDailyPokemonV2 } = require("./pokemon");
 
 const app = express();
@@ -7,7 +6,7 @@ const app = express();
 app.use(express.json({ limit: "1mb" }));
 
 app.get("/", (req, res) => {
-  res.send("<h1>Hello World!</h1>");
+  res.send("Hello World!");
   return;
 });
 
