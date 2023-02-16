@@ -1,6 +1,7 @@
-function GetDateAsNum() {
+function GetRandomNumber(limit) {
   const now = new Date();
-  return now.getDate();
+  const dateNum = now.getDate();
+  return Math.floor((dateNum * 666) % (limit ?? 0));
 }
 
-module.exports = { GetDateAsNum };
+module.exports = { GetRandomNumber };

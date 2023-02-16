@@ -1,40 +1,31 @@
-const { GetDateAsNum } = require("./functions");
+const axios = require("axios");
+const { GetRandomNumber } = require("./functions");
 
-const pokemonList = [
-  { name: "bulbasaur", type: "grass" },
-  { name: "ivysaur", type: "grass" },
-  { name: "venusaur", type: "grass" },
-  { name: "charmander", type: "fire" },
-  { name: "charmeleon", type: "fire" },
-  { name: "charizard", type: "fire" },
-  { name: "squirtle", type: "water" },
-  { name: "wartortle", type: "water" },
-  { name: "blastoise", type: "water" },
-  { name: "caterpie", type: "bug" },
-  { name: "metapod", type: "bug" },
-  { name: "butterfree", type: "bug" },
-  { name: "pikachu", type: "electric" },
-  { name: "raichu", type: "electric" },
-];
+const pokeUrl = "https://pokeapi.co/api/v2/pokemon/";
+const maxPokeIndex = 1000;
 
-function GetPokemonNum(number) {
-  return pokemonList[number % pokemonList.length];
+async function FetchPokemonByIndex(index) {
+  const response = await axios.get(pokeUrl + index);
+  return response.data;
 }
 
-function GetDailyPokemon() {
-  const seedNum = GetDateAsNum();
-  const pokemon = GetPokemonNum(seedNum);
-  return pokemon;
+async function GetDailyPokemonV1() {
+  const seedNum = GetRandomNumber(maxPokeIndex);
+  const pokemon = await FetchPokemonByIndex(seedNum);
+  const result = { name: pokemon.name, types: pokemon.types };
+  return result;
 }
 
-function FetchDailyPokemonV1() {
-  const pokemon = GetDailyPokemon();
-  return pokemon.name;
+async function GetDailyPokemonV2() {
+  const seedNum = GetRandomNumber(maxPokeIndex);
+  const pokemon = await FetchPokemonByIndex(seedNum);
+  const result = {
+    name: pokemon.name,
+    types: pokemon.types,
+    abilities: pokemon.abilities,
+    weight: pokemon.weight,
+  };
+  return result;
 }
 
-function FetchDailyPokemonV2() {
-  const pokemon = GetDailyPokemon();
-  return pokemon;
-}
-
-module.exports = { FetchDailyPokemonV1, FetchDailyPokemonV2 };
+module.exports = { GetDailyPokemonV1, GetDailyPokemonV2 };
