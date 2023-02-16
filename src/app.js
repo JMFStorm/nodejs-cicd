@@ -1,9 +1,8 @@
 const express = require("express");
 var path = require("path");
-const { FetchDailyPokemonV1, FetchDailyPokemonV2 } = require("./functions");
+const { FetchDailyPokemonV1, FetchDailyPokemonV2 } = require("./pokemon");
 
 const app = express();
-const port = 3000;
 
 app.use(express.json({ limit: "1mb" }));
 
@@ -77,7 +76,4 @@ app.get("/secret", function (req, res, next) {
   return;
 });
 
-// Run server
-app.listen(port, () => {
-  console.log(`Express app listening on port ${port}`);
-});
+module.exports = app;

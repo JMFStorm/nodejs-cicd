@@ -1,3 +1,5 @@
+const { GetDateAsNum } = require("./functions");
+
 const pokemonList = [
   { name: "bulbasaur", type: "grass" },
   { name: "ivysaur", type: "grass" },
@@ -15,17 +17,12 @@ const pokemonList = [
   { name: "raichu", type: "electric" },
 ];
 
-function GetDateSeedNum() {
-  const now = new Date();
-  return now.getDate();
-}
-
 function GetPokemonNum(number) {
   return pokemonList[number % pokemonList.length];
 }
 
 function GetDailyPokemon() {
-  const seedNum = GetDateSeedNum();
+  const seedNum = GetDateAsNum();
   const pokemon = GetPokemonNum(seedNum);
   return pokemon;
 }
