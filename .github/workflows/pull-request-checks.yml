@@ -15,4 +15,8 @@ jobs:
           node-version: "16.x"
           cache: "npm"
       - run: npm ci
+      - run: npm install -g pm2
       - run: npm test
+      - run: npm run node-env_start
+      - run: npm run npm run test:integration
+      - run: npm run node-env_end
