@@ -2,6 +2,17 @@ const request = require("supertest");
 const app = require("./app");
 const poke = require("./pokemon");
 
+describe("GET /", () => {
+  test("Return hello world", () => {
+    return request(app)
+      .get("/")
+      .then((response) => {
+        expect(response.statusCode).toBe(200);
+        expect(response.text).toContain("Hello world");
+      });
+  });
+});
+
 const mockPokemon1 = {
   name: "Pokemon 1",
   types: [{ slot: 1, type: { name: "Type name" } }],

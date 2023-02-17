@@ -1,0 +1,12 @@
+env:
+  node: true
+  jest: true
+  es2022: true
+rules:
+  eqeqeq: error
+  semi: error
+  no-const-assign: error
+  no-constant-condition: error
+  no-duplicate-case: error
+  no-self-assign: error
+  no-loss-of-precision: warn
