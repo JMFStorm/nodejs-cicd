@@ -21,7 +21,6 @@ describe("GET /pokemon-of-the-day", () => {
     expect(typeof result.name).toBe("string");
     expect(result.types).toBeDefined();
     expect(typeof result.types).toBe("object");
-    expect(result.types).toBe(111);
   });
 
   test("Version header 2 returns as version 1 plus abilities and weight", async () => {
