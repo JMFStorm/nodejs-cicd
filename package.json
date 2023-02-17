@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "start": "node ./src/index.js",
-    "test": "jest"
+    "test": "jest ./src",
+    "test:integration": "npm install && npm run start && jest ./integration-tests",
+    "coverage": "jest --collect-coverage"
   },
   "author": "Janne Fagerström",
   "license": "MIT",

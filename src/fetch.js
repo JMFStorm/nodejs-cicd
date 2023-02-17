@@ -3,7 +3,12 @@ const axios = require("axios");
 const pokeUrl = "https://pokeapi.co/api/v2/pokemon/";
 
 async function FetchPokemonByIndex(index) {
-  const response = await axios.get(pokeUrl + index);
+  let response;
+  try {
+    response = await axios.get(pokeUrl + index);
+  } catch (error) {
+    console.log("error", error);
+  }
   return response.data;
 }
 
