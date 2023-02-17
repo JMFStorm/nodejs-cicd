@@ -18,5 +18,5 @@ jobs:
       - run: npm install -g pm2
       - run: npm run test:u
       - run: npm run node-env_start
-      - run: npm run npm run test:integration
+      - run: npm run test:integration
       - run: npm run node-env_end
