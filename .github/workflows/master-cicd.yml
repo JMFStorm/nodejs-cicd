@@ -1,16 +1,20 @@
 name: Node.js CI
 on:
-  pull_request:
+  push:
     branches: [master]
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - name: Run pull request checks
+      - name: Run CI/CD
         uses: actions/setup-node@v3
         with:
           node-version: "16.x"
           cache: "npm"
       - run: npm ci
+      - run: npm install -g pm2
       - run: npm run test:u
+      - run: npm run node-env_start
+      - run: npm run test:integration
+      - run: npm run node-env_end
