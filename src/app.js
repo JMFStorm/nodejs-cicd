@@ -6,7 +6,7 @@ const app = express();
 app.use(express.json({ limit: "1mb" }));
 
 app.get("/", (req, res) => {
-  res.send("Hello world");
+  res.send("Hello world.");
   return;
 });
 
