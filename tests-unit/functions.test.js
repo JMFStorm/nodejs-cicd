@@ -1,4 +1,4 @@
-const { GetCurrentDay, GetRandomNumberOfTheDay } = require("./functions");
+const { GetCurrentDay, GetRandomNumberOfTheDay } = require("../src/functions");
 
 describe("GetCurrentDay()", () => {
   test("Returns a number", () => {

@@ -1,5 +1,5 @@
 const axios = require("axios");
-const { FetchPokemonByIndex } = require("./fetch");
+const { FetchPokemonByIndex } = require("../src/fetch");
 
 const mockPokemon = {
   name: "Pokemon 1",

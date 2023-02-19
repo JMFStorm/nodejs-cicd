@@ -5,10 +5,10 @@
   "main": "index.js",
   "scripts": {
     "start": "node ./src/index.js",
-    "tests:unit": "jest ./src",
-    "tests:unit:coverage": "jest ./src --collect-coverage",
-    "tests:integration": "jest ./integration-tests",
-    "lint": "npx eslint src/** integration-tests/**",
+    "tests:unit": "jest ./tests-unit/",
+    "tests:unit:coverage": "jest ./tests-unit/ --collect-coverage",
+    "tests:integration": "jest ./tests-integration/",
+    "lint": "npx eslint ./**/*.js",
     "node:process:start": "pm2 start ./src/index.js --name ci-test",
     "node:process:end": "pm2 kill"
   },

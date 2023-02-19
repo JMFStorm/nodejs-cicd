@@ -1,6 +1,6 @@
-const { GetDailyPokemonV1, GetDailyPokemonV2 } = require("./pokemon");
-const fn = require("./functions");
-const fetch = require("./fetch");
+const { GetDailyPokemonV1, GetDailyPokemonV2 } = require("../src/pokemon");
+const fn = require("../src/functions");
+const fetch = require("../src/fetch");
 
 const mockPokemon = {
   name: "Pokemon 1",
@@ -8,10 +8,10 @@ const mockPokemon = {
   abilities: [{ ability: { name: "Ability name" } }],
   weight: 40,
 };
-jest.mock("./fetch");
+jest.mock("../src/fetch");
 fetch.FetchPokemonByIndex.mockReturnValue(mockPokemon);
 
-jest.mock("./functions");
+jest.mock("../src/functions");
 fn.GetRandomNumberOfTheDay.mockReturnValue(11);
 
 test("FetchDailyPokemonV1() return name and types", async () => {

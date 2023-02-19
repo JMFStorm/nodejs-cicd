@@ -1,6 +1,6 @@
 const request = require("supertest");
-const app = require("./app");
-const poke = require("./pokemon");
+const app = require("../src/app");
+const poke = require("../src/pokemon");
 
 describe("GET /", () => {
   test("Return hello world", () => {
@@ -24,7 +24,7 @@ const mockPokemon2 = {
   weight: 40,
 };
 
-jest.mock("./pokemon");
+jest.mock("../src/pokemon");
 poke.GetDailyPokemonV1.mockReturnValue(mockPokemon1);
 poke.GetDailyPokemonV2.mockReturnValue(mockPokemon2);
 
