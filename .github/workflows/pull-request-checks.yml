@@ -12,6 +12,9 @@ jobs:
         with:
           node-version: "16.x"
           cache: "npm"
-      - run: npm ci
-      - run: npm run lint
-      - run: npm run tests:unit:coverage
+      - name: Npm ci
+        run: npm ci
+      - name: Lint
+        run: npm run lint
+      - name: Unit tests coverage
+        run: npm run tests:unit:coverage
