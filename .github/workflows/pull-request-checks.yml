@@ -1,4 +1,4 @@
-name: Pull Request Checks
+name: Pull request checks
 on:
   pull_request:
     branches: [master]
@@ -16,5 +16,5 @@ jobs:
         run: npm ci
       - name: Lint
         run: npm run lint
-      - name: Unit tests coverage
+      - name: Unit tests & coverage
         run: npm run tests:unit:coverage
