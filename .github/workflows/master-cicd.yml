@@ -12,9 +12,12 @@ jobs:
         with:
           node-version: "16.x"
           cache: "npm"
-      - run: npm ci
-      - run: npm install -g pm2
-      - run: npm run tests:unit
-      - run: npm run node:process:start
-      - run: npm run tests:integration
-      - run: npm run node:process:end
+      - name: Install
+        run: npm ci
+        run: npm install -g pm2
+      - name: Unit tests
+        run: npm run tests:unit
+      - name: Integration tests
+        run: npm run node:process:start
+        run: npm run tests:integration
+        run: npm run node:process:end
