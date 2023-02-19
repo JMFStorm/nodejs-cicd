@@ -13,8 +13,7 @@ jobs:
           node-version: "16.x"
           cache: "npm"
       - name: Install
-        run: npm ci
-        run: npm install -g pm2
+        run: npm ci && npm install -g pm2
       - name: Unit tests
         run: npm run tests:unit
       - name: Integration tests
