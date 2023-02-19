@@ -8,7 +8,7 @@
     "tests:unit": "jest ./tests-unit/",
     "tests:unit:coverage": "jest ./tests-unit/ --collect-coverage",
     "tests:integration": "jest ./tests-integration/",
-    "lint": "npx eslint ./**/*.js",
+    "lint": "npx eslint ./src/ ./tests-unit/ ./tests-integration/",
     "node:process:start": "pm2 start ./src/index.js --name ci-test",
     "node:process:end": "pm2 kill"
   },
