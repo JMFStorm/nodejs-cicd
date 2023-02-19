@@ -17,4 +17,4 @@ jobs:
       - name: Unit tests
         run: npm run tests:unit
       - name: Integration tests
-        run: npm run node:process:start && npm run tests:integration && npm run node:process:end
+        run: npm run tests:integration:process
