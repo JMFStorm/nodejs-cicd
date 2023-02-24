@@ -1,7 +1,5 @@
 # Node.js CI/CD Example App
 
-**This app is hosted on: [https://nodejs-cidc-example.herokuapp.com/]**
-
 ## About
 
 This project contains an example starting point for creating Node.js Express apps.
